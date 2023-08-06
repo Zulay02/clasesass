@@ -69,7 +69,8 @@ article{
         color: white;
         font-size: 1em;
         &:hover{
-            transform: scale(1.1);
+            transform: 1.1;
+            padding-bottom: 50px;
         }
     }
     img{
@@ -149,10 +150,11 @@ section{
     .mission-section{
         @include flexCenter(row, space-evenly, center);
         .earth{
+            $text-color:#E86424; 
             width: 30vw;
             display: flex;
             gap: 40px;
-           color:#E86424;
+           color:$text-color;
            img{
             object-fit: contain;
            }
@@ -180,9 +182,29 @@ section{
             object-position: 5px 35%;
             border-radius: 16px;
             &:hover{
-                transform: scale(1.1);
+                transform: 1.1;
+                padding-bottom: 50px;
             }
         }
+    }
+}
+.location{
+    $text-color:#E86424; 
+    color: $text-color;
+    h2{
+        font-size: $paragraph-size;
+        padding-bottom:60px;
+        padding-top: 60px;
+    }
+    .map{
+        @include flexCenter(row, center, center);
+        padding-bottom: 50px;
+    }
+    h3{
+        font-size: $paragraph-size;
+    }
+    p{
+      font-size: $paragraph-size;  
     }
 }
 
@@ -192,5 +214,12 @@ footer{
     $background:$quaternary-color;
     background-color: $background;
     width: 100%;
-    height: 250px
+    height: auto;
+    padding: 40px;
+    color: white;
+    .social-media{
+        @include flexCenter(row, center,center);
+        gap: 40px;
+        padding-bottom: 40px;
+    }
 }
