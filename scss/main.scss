@@ -6,7 +6,7 @@ $quaternary-color:#FA9500;
 $font-stack: 'IBM Plex Sans' , sans-serif;
 $paragraph-size:1.5em; 
 
-@mixin flexCenter($diections,$content,$align){
+@mixin flexCenter($direction,$content,$align){
     display: flex;
     flex-direction: $direction;
     justify-content: $content;
@@ -29,8 +29,7 @@ body{
 
 nav{
     width: auto;
-    display: flex;
-    justify-content: space-between;
+    @include flexCenter(row, space-between, center);
     color: $primary-text-color;
     padding: 15px;
     p{
@@ -40,21 +39,20 @@ nav{
     .icons{
         display: flex;
         gap: 15px;
-        @include buttonStyle;   
+        @include buttonStyle; 
     }
 }
 
 article{
     width: auto;
     color: $primary-text-color;
-    display: flex;
+    @include flexCenter(row, space-between, center);
     padding-left: 45px;
     padding-right: 45px;
     padding-top: 70px;
-    justify-content: space-between;
+   
     .impact-section{
-       display: flex; 
-       flex-direction: column;
+       @include flexCenter(column, space-evenly, flex-start);
        padding-top: 50px;
        gap: 25px;
     }
@@ -66,11 +64,11 @@ article{
     p{
         font-size: $paragraph-size;
     }
+    @include buttonStyle;
     button{
         width: 12vw;
         padding: 20px;
         background-color: $quaternary-color;
-        border-style: none;
         border-radius: 35px;
         color: white;
         font-size: 1em;
@@ -96,12 +94,10 @@ section{
             padding-bottom: 60px;
         }
         .card-section{
-            display: flex;
             width: auto;
             height: auto;
-            justify-content: center;
+            @include flexCenter(row, space-evenly, center);
             flex-wrap: wrap;
-            align-items: center;
             column-gap: 200px;
             row-gap: 80px;
         }   
@@ -147,6 +143,32 @@ section{
     } 
 }
 
+.about-us{
+    padding-bottom: 60px;
+    h2{
+       font-weight: bold;
+       padding-bottom: 60px; 
+    }
+    .mision-section{
+        @include flexCenter(row, space-evenly, center);
+        .earth{
+            width: 30vw;
+            display: flex;
+            gap: 40px;
+           color:#E86424;
+           img{
+            object-fit: contain;
+           }
+           p{
+            text-align: center;
+            font-size: $paragraph-size;
+           }
+        }
+    }
+    .innovation{
+       @extend .earth
+    }
+}
 
 
 
