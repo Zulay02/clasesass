@@ -12,21 +12,18 @@ $paragraph-size:1.5em;
     justify-content: $content;
     align-items: $align;
 }
-
 @mixin buttonStyle{
     button{
         background: none;
         border-style: none; 
     }
 }
-
 body{
     margin: 0px;
     padding: 0px;
     background-color: $primary-color;
     font-family: $font-stack;
 }
-
 nav{
     width: auto;
     @include flexCenter(row, space-between, center);
@@ -42,7 +39,6 @@ nav{
         @include buttonStyle; 
     }
 }
-
 article{
     width: auto;
     color: $primary-text-color;
@@ -72,6 +68,9 @@ article{
         border-radius: 35px;
         color: white;
         font-size: 1em;
+        &:hover{
+            transform: scale(1.1);
+        }
     }
     img{
         width: 25vw;
@@ -82,7 +81,6 @@ section{
     width: auto;
     height: auto;
     padding: 60px;
-
     h2{
         color: $primary-text-color;
         font-size: 2em;
@@ -142,7 +140,6 @@ section{
         }
     } 
 }
-
 .about-us{
     padding-bottom: 60px;
     h2{
@@ -167,6 +164,25 @@ section{
     }
     .innovation{
        @extend .earth
+    }
+}
+.gallery{
+    h2{
+        font-weight: bold;
+        padding-bottom: 60px; 
+     }
+    .gallery-images{
+        @include flexCenter(row, space-between, center);
+        img{
+            width: 28vw;
+            height: 30vw;
+            object-fit: cover;
+            object-position: 5px 35%;
+            border-radius: 16px;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
     }
 }
 
