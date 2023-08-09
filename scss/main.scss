@@ -69,8 +69,8 @@ article{
         color: white;
         font-size: 1em;
         &:hover{
-            transform: 1.1;
-            padding-bottom: 50px;
+            transform: scale(1.1);
+            transition-duration: 0.3s;
         }
     }
     img{
@@ -102,7 +102,7 @@ section{
         }   
         .product-card{
             width: 14vw;
-            height: 45vh;
+            height: 50vh;
             background-color: $secondary-color;
             color: $primary-text-color;
             padding: 20px;
@@ -126,7 +126,7 @@ section{
                 align-items: center;
                 img{
                     width: 12vw;
-                    height: 20vh;
+                    height: 30vh;
                     object-fit: cover;
                     border-radius: 6px;
                 }
@@ -182,8 +182,8 @@ section{
             object-position: 5px 35%;
             border-radius: 16px;
             &:hover{
-                transform: 1.1;
-                padding-bottom: 50px;
+                transform: scale(1.1);
+                transition-duration: 0.3s;
             }
         }
     }
@@ -211,8 +211,7 @@ section{
 
 
 footer{
-    $background:$quaternary-color;
-    background-color: $background;
+    background-color: $quaternary-color;
     width: 100%;
     height: auto;
     padding: 40px;
